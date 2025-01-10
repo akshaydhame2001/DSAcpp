@@ -24,8 +24,43 @@ void explainVector()
     // Copying a vector
     vector<int> v3(v1); // Copies all elements from v1 to v3
 
+    // Iterators
+    vector<int>::iterator it = v.begin();
+    cout << *(it) << " "; // Print the first element
+
+    // Ensure the vector has at least 3 elements before advancing the iterator
+    if (v.size() > 2)
+    {
+        it = it + 1; // Advances to the second element
+        cout << *(it) << " ";
+    }
+
+    // Avoid redeclaring iterators with the same name
+    vector<int>::iterator itEnd = v.end();
+    vector<int>::reverse_iterator itRend = v.rend();
+    vector<int>::reverse_iterator itRbegin = v.rbegin();
+
+    // Accessing elements using different methods
+    if (!v.empty())
+    {
+        cout << v[0] << " " << v.at(0) << " "; // Access the first element
+        cout << v.back() << " ";               // Access the last element
+    }
+
+    // Using a loop with iterators
+    for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+    {
+        cout << *(it) << " ";
+    }
+
+    // Using a loop with `auto` for simplicity
+    for (auto it = v.begin(); it != v.end(); it++)
+    {
+        cout << *(it) << " ";
+    }
+
     // Printing vectors for demonstration
-    cout << "Vector v: ";
+    cout << "\nVector v: ";
     for (int i : v)
         cout << i << " ";
     cout << "\n";
