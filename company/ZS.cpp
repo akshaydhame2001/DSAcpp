@@ -1,3 +1,6 @@
+/* Calculate the "magic value" differnece of good integers(sum of integers whose index not changed after sorting)
+and bad integers(sum of remaining integers)
+*/
 #include <iostream>
 #include <vector>
 #include <algorithm>
