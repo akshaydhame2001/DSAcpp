@@ -34,3 +34,6 @@ int main()
     cin >> n;
     cout << evenlyDivides(n) << endl;
 }
+
+// time complexity is O(log10(n))
+// Number of iterations based on division
