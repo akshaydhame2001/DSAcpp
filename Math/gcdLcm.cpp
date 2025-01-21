@@ -5,7 +5,7 @@ vector<int> lcmAndGcd(int a, int b)
 {
     // code here
     // 1. dividing both nums till min(a, b)
-    // 2. Euclidean algorithm: gcd(a%b, b) till a || b becomes zero where greater%smaller.
+    // 2. Euclidean algorithm: gcd(a%b, b) till a || b becomes zero where greater%smaller. O(log phi (min(a, b)))
     int gcd = 1;
     int n1 = a;
     int n2 = b;
