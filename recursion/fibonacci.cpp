@@ -16,3 +16,5 @@ int main()
     cin >> n;
     cout << fibo(n) << endl;
 }
+
+// Time complexity: 2^n
