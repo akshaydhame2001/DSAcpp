@@ -31,6 +31,8 @@ int main()
         cin >> number;
         cout << hash[number] << endl;
     }
-
     return 0;
 }
+
+// max array size 10^6 inside int main() for bool 10^7
+// max array size 10^7 globally for bool 10^8
