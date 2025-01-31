@@ -7,8 +7,7 @@ int main()
     cout << "Enter array size: ";
     cin >> n;
     int arr[n];
-    cout << endl
-         << "Enter array elements: ";
+    cout << "Enter array elements: ";
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
