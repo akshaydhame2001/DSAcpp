@@ -8,16 +8,23 @@ int main()
     cin >> n;
     int arr[n];
     cout << "Enter array elements: ";
+    unordered_map<int, int> mpp;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
+        mpp[arr[i]]++;
     }
 
     // precompute
-    map<int, int> mpp;
-    for (int i = 0; i < n; i++)
+    // map<int, int> mpp;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     mpp[arr[i]]++;
+    // }
+
+    for (auto it : mpp)
     {
-        mpp[arr[i]]++;
+        cout << it.first << "->" << it.second << endl;
     }
 
     int q;
@@ -37,18 +44,15 @@ int main()
 /*
  Comparison of Approaches for Querying Frequencies
 
- 1. Brute Force (O(Q * N), O(1) space)
-    - Check each query by iterating through the array.
-    - Pros: Simple, easy to implement.
-    - Cons: Very slow for large N, Q.
-
- 2. Array Hashing (O(N + Q), O(max_element) space)
-    - Precompute frequencies in an array.
-    - Pros: Fast O(1) lookup for queries.
-    - Cons: High memory usage if numbers are large (e.g., 10^9).
-
- 3. Map Hashing (O(N + Q), O(U) space, U = unique elements)
-    - Store frequencies in a dictionary (hashmap).
-    - Pros: Efficient for large/sparse numbers.
-    - Cons: Slightly higher constant overhead. (collisions)
+ 1. Brute Force O(n*n), O(1) space
+ 2. Array Hashing O(n*1), O(max_element) space
+ 3. Map Hashing O(n*logn), O(U) space, U = unique elements
+ NOTE: any data type or data structure as key e.g. int, char, long, pair
+ 4. unordered_map O(n*1) best and avg, O(n*n) worst
+ NOTE: only individual data type as key e.g, int, char, long
+collisions: 2 or more element at same index stored as linked_list
+-division method: query_element(arr[i]) % hash_size (10^6)
+-folding method
+-mid sqaure method
+NOTE: use unordered_map and when timelimit exceeds use map only.
 */
