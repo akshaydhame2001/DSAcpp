@@ -55,4 +55,5 @@ collisions: 2 or more element at same index stored as linked_list
 -folding method
 -mid sqaure method
 NOTE: use unordered_map and when timelimit exceeds use map only.
+In java it is called as hashmap and it creates 16 buckets by default.
 */
