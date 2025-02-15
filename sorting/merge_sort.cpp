@@ -19,4 +19,4 @@ int main()
     return 0;
 }
 
-// time complexity:
+// time complexity: O(Logn)
