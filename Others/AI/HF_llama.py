@@ -1,3 +1,4 @@
+# ECS
 # FROM nvidia/cuda:12.2.0-runtime-ubuntu20.04
 # RUN apt-get update && apt-get install -y python3-pip
 # COPY requirements.txt .

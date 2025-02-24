@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+//  Divide ad merge
 void merge_sort(int arr[], int n)
 {
 }
