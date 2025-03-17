@@ -71,6 +71,36 @@ for param in model.parameters():
     param.requires_grad = False  # Freeze layers
 model.fc = nn.Linear(2048, 10)  # Modify classifier
 
-base_model = tf.keras.applications.VGG16(include_top=False, input_shape=(224, 224, 3))
+base_model = tf.keras.applications.ResNet50(weights="imagenet", include_top=False, input_shape=(224, 224, 3))
 base_model.trainable = False  # Freeze layers
-model = tf.keras.Sequential([base_model, tf.keras.layers.Dense(10, activation='softmax')])
+model = tf.keras.Sequential([base_model, tf.keras.layers.GlobalAveragePooling2D(), tf.keras.layers.Dense(10, activation='softmax')])
+
+# CNN in TensorFlow
+import tensorflow as tf
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(224,224,3)),
+    tf.keras.layers.MaxPooling2D(2,2),
+    tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+
+# CNN in PyTorch
+class CNN(nn.Module):
+    def __init__(self):
+        super(CNN, self).__init__()
+        self.conv1 = nn.Conv2d(3, 32, 3, padding=1)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.fc = nn.Linear(32 * 112 * 112, 10)
+
+    def forward(self, x):
+        x = self.pool(torch.relu(self.conv1(x)))
+        x = x.view(x.size(0), -1)
+        x = self.fc(x)
+        return x
+
+
+
