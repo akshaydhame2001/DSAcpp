@@ -102,5 +102,4 @@ class CNN(nn.Module):
         x = self.fc(x)
         return x
 
-
-
+# 2 stage vs 1 stage object detector: region proposal and classification and locali
