@@ -1,3 +1,14 @@
+GStreamer is an open-source, cross-platform multimedia framework used to build complex media-handling pipelines.
+It allows you to process audio, video, and streaming data in real time or offline by combining modular plugins into pipelines.
+
+Benifits of GStreamer
+- Video encoding decoding
+- Efficient streaming or Multi Video Stream
+- Streaming Protocols: UDP, RTSP, HTTP, WebRTC
+- Formats: H.264, H.265, MJPEG, MP4, AVI, MKV
+- Realtime processing
+- Cross Platform: Linux, Windows, MacOS, Android, embedded platforms
+
 gst-launch-1.0 [source] ! [decoder] ! [processing] ! [sink]
 
 nvarguscamerasrc	Access camera (CSI camera)
